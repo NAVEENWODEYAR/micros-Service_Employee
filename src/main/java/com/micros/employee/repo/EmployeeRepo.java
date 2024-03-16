@@ -2,9 +2,7 @@ package com.micros.employee.repo;
 
 import com.micros.employee.modal.Employee;
 import org.springframework.stereotype.Repository;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Repository
 public class EmployeeRepo {
@@ -18,7 +16,7 @@ public class EmployeeRepo {
 
     public Employee findById(Long eId){
         return employees.stream()
-                .filter(e->e.dId() == eId)
+                .filter(e->e.eId() == eId)
                 .findFirst()
                 .orElseThrow();
     }
