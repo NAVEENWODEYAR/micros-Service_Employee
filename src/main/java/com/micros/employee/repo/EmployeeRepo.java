@@ -16,7 +16,7 @@ public class EmployeeRepo {
 
     public Employee findById(Long eId){
         return employees.stream()
-                .filter(e->e.eId() == eId)
+                .filter(e->e.geteId() == eId)
                 .findFirst()
                 .orElseThrow();
     }
@@ -27,7 +27,7 @@ public class EmployeeRepo {
 
     public  List<Employee> findByDept(Long dId){
         return employees.stream()
-                .filter(e -> e.dId() == dId)
+                .filter(e -> e.getdId()  == dId)
                 .toList();
     }
 }

@@ -1,7 +1,6 @@
 package com.micros.employee.controller;
 
 import com.micros.employee.modal.Employee;
-import com.micros.employee.modal.Employees;
 import com.micros.employee.repo.EmployeeRepo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,9 +27,10 @@ public class EmployeeController {
     }
 
     @PostMapping("/addEmp")
-    public Employee addEmployee(Employee emp){
+    public Employee addEmployee(@RequestBody Employee emp){
         LOGGER.info("Employee added: {}"+emp);
-        return employeeRepo.addEmployee(emp);
+        employeeRepo.addEmployee(emp);
+        return emp;
     }
 
     @GetMapping("/getEmployees")
