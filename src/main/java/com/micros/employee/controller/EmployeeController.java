@@ -1,5 +1,6 @@
 package com.micros.employee.controller;
 
+import com.micros.employee.modal.Employee;
 import com.micros.employee.modal.Employees;
 import com.micros.employee.repo.EmployeeRepo;
 import org.slf4j.Logger;
@@ -27,25 +28,25 @@ public class EmployeeController {
     }
 
     @PostMapping("/addEmp")
-    public Employees addEmployee(Employees emp){
+    public Employee addEmployee(Employee emp){
         LOGGER.info("Employee added: {}"+emp);
         return employeeRepo.addEmployee(emp);
     }
 
     @GetMapping("/getEmployees")
-    public List<Employees> getEmployees(){
+    public List<Employee> getEmployees(){
         LOGGER.info("Employee list found,");
         return employeeRepo.findAll();
     }
 
     @GetMapping("/findById/{eId}")
-    public Employees findById(@PathVariable Long eId){
+    public Employee findById(@PathVariable Long eId){
         LOGGER.info("Employee found: {}"+eId);
         return employeeRepo.findById(eId);
     }
 
     @GetMapping("/dept/{dId}")
-    public List<Employees> findByDept(@PathVariable Long dId){
+    public List<Employee> findByDept(@PathVariable Long dId){
         LOGGER.info("Employees of the dept: {}"+dId);
         return employeeRepo.findByDept(dId);
     }
