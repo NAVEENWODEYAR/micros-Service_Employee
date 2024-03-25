@@ -1,10 +1,12 @@
 package com.micros.employee.modal;
 
+import jakarta.persistence.Id;
 import lombok.Data;
 
 //public record Employee(Long eId, Long dId, String eName, int eAge, String position) {}
 @Data
 public class Employee {
+    @Id
     private Long eId;
     private Long dId;
     private String eName;

@@ -1,12 +1,14 @@
 package com.micros.employee.repo;
 
 import com.micros.employee.modal.Employee;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import java.util.*;
 
 @Repository
-public class EmployeeRepo {
+public interface EmployeeRepo extends CrudRepository<Employee,Long> {
 
+    /**
     private List<Employee> employees = new ArrayList<>();
 
     public Employee addEmployee(Employee emp){
@@ -29,5 +31,5 @@ public class EmployeeRepo {
         return employees.stream()
                 .filter(e -> e.getdId()  == dId)
                 .toList();
-    }
+    }*/
 }

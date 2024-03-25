@@ -26,7 +26,7 @@ public class EmployeeController {
         return "Welcome to Employee-Service!,";
     }
 
-    @PostMapping("/addEmp")
+    /**@PostMapping("/addEmp")
     public Employee addEmployee(@RequestBody Employee emp){
         LOGGER.info("Employee added: {}"+emp);
         employeeRepo.addEmployee(emp);
@@ -49,5 +49,6 @@ public class EmployeeController {
     public List<Employee> findByDept(@PathVariable Long dId){
         LOGGER.info("Employees of the dept: {}"+dId);
         return employeeRepo.findByDept(dId);
-    }
+    }*/
+
 }
