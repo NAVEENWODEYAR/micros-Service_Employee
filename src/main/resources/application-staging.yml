@@ -1,0 +1,19 @@
+
+server:
+  port: 2211
+environment: common
+
+
+spring:
+  application:
+    name: Staging-Environment
+  datasource:
+    url: jdbc:mysql://localhost:3306/emploeedb?createDatabaseIfNotExist=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${Dtabase}
+    password: ${Password}
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+
